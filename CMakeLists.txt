@@ -1,5 +1,5 @@
 ke_minimum_required(VERSION 3.5)
-project(robo2022)
+project(joy2vel)
 
 # Default to C99
 if(NOT CMAKE_C_STANDARD)
