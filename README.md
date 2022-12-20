@@ -1,8 +1,12 @@
 # joy2vel
+
 # 概要
+pub_cmd_vel_rover:twist型のメッセージのパブリッシュ
+
+sub_joy:subscriber
 
 # アップデート
 2022/12/20: パッケージの作成とドキュメントの作成。
+
 # サポートされるプラットフォーム
-あらゆるROS環境。
-検証されているのはUbuntu22/20上で動作するHumble/Galactic/Foxyのみです。
+Ubuntu20.04+(検証済み）
