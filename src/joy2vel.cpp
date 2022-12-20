@@ -15,7 +15,7 @@ class joy2vel : public rclcpp::Node
 	  "/joy" , 10 , std::bind(&joy2vel::joy_topic_callback, this , _1)
 	  );
 
-          pub_cmd_vel_rover = thiis->create_publisher<geometry_msgs::msg::Twist>("robo2022/cmd_vel/rover" , 10);
+          pub_cmd_vel_rover = this->create_publisher<geometry_msgs::msg::Twist>("robo2022/cmd_vel/rover" , 10);
           pub_cmd_vel_updown = this->create_publisher<geometry_msgs::msg::Twist>("robo2022/cmd_vel/updown" , 10);
 
 	}
