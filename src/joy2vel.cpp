@@ -11,6 +11,13 @@ class joy2vel : public rclcpp::Node
        	public:i
         joy2vel() : Node("joy2vel")
         {
+	  this->declare_parameter<int>("tw_x" , 1);
+          this->declare_parameter<int>("tw_y" , 3);
+          this->declare_parameter<int>("tw_z" , 0);
+          this->get_parameter("tw_x" , tw_x);
+          this->get_parameter("tw_y" , tw_y);
+          this->get_parameter("tw_z" , tw_z);
+	  
           sub_joy = this->create_subscription<sensor_msgs::msg::Joy>(
 	  "/joy" , 10 , std::bind(&joy2vel::joy_topic_callback, this , _1)
 	  );
@@ -33,6 +40,10 @@ class joy2vel : public rclcpp::Node
 										 
 	rclcpp::Subscription<sensor_msgs::msg::Joy>::SharedPtr sub_joy;
 	rclcpp::Publisher<geometry_msgs::msg::Twist>::SharedPtr pub_cmd_vel_rover;
+	
+  int tw_x;
+  int tw_y;
+  int tw_z;
 };
 int main(int argc, char * argv[])
 {
